@@ -1,0 +1,115 @@
+#
+# BASH settings shared across my shells.
+# ======================================
+
+# ALIASES
+
+# file system
+# ===========
+
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ls='ls --color=auto'
+alias la='ls -lhA'
+alias cp='cp -rv'
+mkcd ()
+{
+    mkdir -p "$@"
+    cd "$@"
+}
+
+alias f='find . -type f -name'
+ff () 
+{ 
+    find . -type f -iname '*'"$@"'*' ; 
+}
+
+
+
+# development
+# ===========
+
+alias svim='sudo vim'
+alias vimo='vim -O'
+
+# git
+alias gist='git status'
+alias gici='git commit'
+alias gidi='git diff'
+alias gico='git checkout'
+alias gipull='git pull'
+alias gipush='git push'
+alias gibr='git branch'
+alias gista='git stash'
+alias gistap='git stash apply'
+alias gisvci='git commit -a && git svn dcommit'
+alias gisvurl='git svn info --url'
+
+complete -o default -o nospace -F _git_checkout gico
+complete -o default -o nospace -F _git_branch gibr
+
+
+
+# networking
+# ==========
+
+alias dns='nslookup'
+
+
+
+# system
+# ======
+
+alias dupgrade='sudo apt-get update && sudo apt-get dist-upgrade'
+
+psg () 
+{
+    FIRST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
+    REST=`echo $1 | sed -e 's/^.\(.*\)/\1/'`
+    ps aux | grep "[$FIRST]$REST"
+}
+
+alias hist='history | grep'
+
+
+# CONFIGURATION
+
+# development
+# ===========
+
+# RED="\[\033[0;31m\]"
+# LIGHT_RED="\[\033[1;31m\]"
+BROWN="\[\033[0;33m\]"
+YELLOW="\[\033[1;33m\]"
+# GREEN="\[\033[0;32m\]"
+# LIGHT_GREEN="\[\033[1;32m\]"
+WHITE="\[\033[1;37m\]"
+LIGHT_GRAY="\[\033[0;37m\]"
+# DARK_GRAY="\[\033[1;30m\]"
+NO_COLOR='\e[m'
+
+# show git branch in prompt
+function get_git_branch
+{
+    ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
+    echo " (${ref#refs/heads/})"
+}
+
+function proml
+{
+   case $TERM in
+    xterm*)
+        TITLEBAR='\[\033]0;\u@\h:\w\007\]'
+        ;;
+    *)
+        TITLEBAR=""
+        ;;
+    esac
+
+PS1="${TITLEBAR}\
+$LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\$(get_git_branch)\
+$WHITE\$ $NO_COLOR"
+PS2='> '
+PS4='+ '
+}
+proml

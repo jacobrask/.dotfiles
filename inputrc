@@ -1,0 +1,6 @@
+#
+# INPUT settings shared across my shells.
+# =======================================
+
+set bell-style none
+set completion-ignore-case on
