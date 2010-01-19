@@ -31,6 +31,12 @@ ff ()
 
 alias svim='sudo vim'
 alias vimo='vim -O'
+fvim () 
+{ 
+    vim $(ack -g $@)
+}
+
+
 
 # git
 alias gist='git status'
