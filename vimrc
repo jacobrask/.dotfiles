@@ -10,7 +10,6 @@ set ruler
 set wildmenu
 set wildmode=list:longest
 colo candy
-filetype plugin on
 filetype plugin indent on
 syntax on
 map Y y$
