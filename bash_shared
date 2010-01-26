@@ -23,7 +23,7 @@ ff ()
 { 
     find . -type f -iname '*'"$@"'*' ; 
 }
-
+alias fcnt='find . -type f | wc -l'
 
 
 # development
