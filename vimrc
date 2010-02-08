@@ -18,6 +18,6 @@ map Y y$
 command W w
 command Q q
 set statusline=%t\ (%{GitBranch()})
-set viewoptions=cursor,folds
+set viewoptions=cursor,folds,options
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
