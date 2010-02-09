@@ -11,7 +11,8 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ls='ls --color=auto'
 alias la='ls -lhA'
-alias cp='cp -rv'
+alias cp='cp -riv'
+alias mv='mv -iv'
 mkcd ()
 {
     mkdir -p "$@"
@@ -29,6 +30,7 @@ alias fcnt='find . -type f | wc -l'
 # development
 # ===========
 
+export EDITOR=vim
 alias svim='sudo vim'
 alias vimo='vim -O'
 fvim () 
@@ -67,15 +69,26 @@ alias dns='nslookup'
 # ======
 
 alias dupgrade='sudo apt-get update && sudo apt-get dist-upgrade'
-
 psg () 
 {
     FIRST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
     REST=`echo $1 | sed -e 's/^.\(.*\)/\1/'`
     ps aux | grep "[$FIRST]$REST"
 }
-
 alias hist='history | grep'
+drestart() 
+{ 
+  sudo /etc/rc.d/$1 restart
+}
+dstart() 
+{
+  sudo /etc/rc.d/$1 start
+}
+dstop() 
+{
+  sudo /etc/rc.d/$1 stop
+}
+
 
 
 # CONFIGURATION
