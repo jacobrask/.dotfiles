@@ -132,3 +132,5 @@ PS2='> '
 PS4='+ '
 }
 proml
+
+xmodmap -e "remove lock = Caps_Lock"
