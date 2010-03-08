@@ -4,7 +4,7 @@ set softtabstop=4
 set expandtab
 set nu
 set showcmd
-set pastetoggle=<F11>
+set pastetoggle=<F10>
 set laststatus=2
 set ruler
 set wildmenu
@@ -15,6 +15,10 @@ colo candy
 filetype plugin indent on
 syntax on
 map Y y$
+imap <F11> <ESC>
+map <F11> i
+imap <F2> <ESC>:w<CR>
+nmap <F2> :w<CR>
 command W w
 command Q q
 set statusline=%t\ (%{GitBranch()})
