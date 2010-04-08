@@ -108,29 +108,10 @@ LIGHT_GRAY="\[\033[0;37m\]"
 NO_COLOR='\e[m'
 
 # show git branch in prompt
-function get_git_branch
-{
-    ref=$(git-symbolic-ref HEAD 2> /dev/null) || return
-    echo " (${ref#refs/heads/})"
-}
-
-function proml
-{
-   case $TERM in
-    xterm*)
-        TITLEBAR='\[\033]0;\u@\h:\w\007\]'
-        ;;
-    *)
-        TITLEBAR=""
-        ;;
-    esac
 
 PS1="${TITLEBAR}\
-$LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\$(get_git_branch)\
+$LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\$(__git_ps1 ' (%s)')\
 $WHITE\$ $NO_COLOR"
 PS2='> '
 PS4='+ '
-}
-proml
 
-xmodmap -e "remove lock = Caps_Lock"
