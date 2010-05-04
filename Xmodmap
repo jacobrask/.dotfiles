@@ -1,2 +1,3 @@
 keycode 35 = slash asciitilde dead_ogonek section dead_ogonek section
 keycode 49 = asciicircum onehalf
+remove lock = Caps_Lock
