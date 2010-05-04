@@ -1,3 +1,6 @@
 keycode 35 = slash asciitilde dead_ogonek section dead_ogonek section
 keycode 49 = asciicircum onehalf
-remove lock = Caps_Lock
+
+! Map Caps Lock to <F11> (which then toggles insert mode in vim)
+remove Lock = Caps_Lock
+keycode 66 = F11
