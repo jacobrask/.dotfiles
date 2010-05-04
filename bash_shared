@@ -109,6 +109,10 @@ NO_COLOR='\e[m'
 
 # show git branch in prompt
 
+GIT_PS1_SHOWDIRTYSTATE=1 #... untagged(*) and staged(+) changes
+GIT_PS1_SHOWSTASHSTATE=1 #... if something is stashed($)
+GIT_PS1_SHOWUNTRACKEDFILES=1 #... untracked files(%)
+
 PS1="${TITLEBAR}\
 $LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\$(__git_ps1 ' (%s)')\
 $WHITE\$ $NO_COLOR"
