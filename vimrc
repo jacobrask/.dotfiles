@@ -4,6 +4,7 @@ set softtabstop=4
 set expandtab
 set nu
 set showcmd
+set nocp
 set pastetoggle=<F10>
 set laststatus=2
 set ruler
@@ -15,8 +16,8 @@ colo candy
 filetype plugin indent on
 syntax on
 map Y y$
-imap <F11> <ESC>
-map <F11> i
+imap <Esc>[23~ <ESC>
+nmap <Esc>[23~ i
 imap <F2> <ESC>:w<CR>
 nmap <F2> :w<CR>
 command W w
