@@ -1,8 +1,9 @@
+" GENERAL
 au BufWinLeave ?* mkview
 au BufWinEnter ?* silent loadview
 set autochdir
 
-" Indentation
+" INDENTATION
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
@@ -10,7 +11,7 @@ set expandtab
 filetype plugin indent on
 syntax on
 
-" Interface
+" INTERFACE
 set nu
 set showcmd
 set nocp
@@ -24,13 +25,17 @@ colo candy
 set statusline=%F\ (%{GitBranch()})\ [%l,%v]
 set viewoptions=cursor,folds,options
 
-" Shortcuts
+" SHORTCUTS
 command W w
 command Q q
-set pastetoggle=<F10>
+set pastetoggle=<F11>
 map Y y$
+
+" Caps Lock to insert mote
 imap <Esc>[23~ <ESC>
 nmap <Esc>[23~ a
 imap <F2> <ESC>:w<CR>
 nmap <F2> :w<CR>
 
+" Alt -> switches split (for Kinesis keyboard)
+map <Esc>[1;3C <C-W><C-w>
