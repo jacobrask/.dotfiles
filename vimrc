@@ -17,7 +17,7 @@ filetype plugin indent on
 syntax on
 map Y y$
 imap <Esc>[23~ <ESC>
-nmap <Esc>[23~ i
+nmap <Esc>[23~ a
 imap <F2> <ESC>:w<CR>
 nmap <F2> :w<CR>
 command W w
