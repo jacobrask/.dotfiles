@@ -32,8 +32,8 @@ set pastetoggle=<F11>
 map Y y$
 
 " Caps Lock to insert mote
-imap <Esc>[23~ <ESC>
-nmap <Esc>[23~ a
+imap <F10> <ESC>
+nmap <F10> a
 imap <F2> <ESC>:w<CR>
 nmap <F2> :w<CR>
 
