@@ -33,7 +33,7 @@ map Y y$
 
 " Caps Lock to insert mote
 imap <F10> <ESC>
-nmap <F10> a
+nmap <F10> i
 imap <F2> <ESC>:w<CR>
 nmap <F2> :w<CR>
 
