@@ -1,4 +1,4 @@
 keycode 35 = slash asciitilde dead_ogonek section dead_ogonek section
 keycode 49 = asciicircum onehalf
-remove Lock = Caps_Lock
 keycode 66 = F10
+clear Lock
