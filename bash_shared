@@ -49,13 +49,16 @@ alias gipl='git pull'
 alias gips='git push'
 alias gibr='git branch'
 alias gista='git stash'
-alias gistap='git stash apply'
+alias gistap='git stash apply && git stash drop'
 alias gisvci='git commit -a && git svn dcommit'
 alias gisvurl='git svn info --url'
 
 complete -o default -o nospace -F _git_checkout gico
 complete -o default -o nospace -F _git_branch gibr
-
+vimdiffgit ()
+{
+    vimdiff <(git show $2:$1) $1
+}
 
 
 # networking
@@ -68,7 +71,6 @@ alias dns='nslookup'
 # system
 # ======
 
-alias dupgrade='sudo apt-get update && sudo apt-get dist-upgrade'
 psg () 
 {
     FIRST=`echo $1 | sed -e 's/^\(.\).*/\1/'`
