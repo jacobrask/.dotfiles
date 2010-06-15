@@ -1,6 +1,4 @@
 " GENERAL
-au BufWinLeave ?* mkview
-au BufWinEnter ?* silent loadview
 set autochdir
 
 " INDENTATION
