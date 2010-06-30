@@ -24,6 +24,10 @@ ff ()
 { 
     find . -type f -iname '*'"$@"'*' ; 
 }
+fr ()
+{
+    find . -type f -iname "$1" -exec perl -pi -e "$2" {} \;
+}
 fcnt() { 
     if [ -z "$@" ]
     then
@@ -57,24 +61,19 @@ alias gips='git push'
 alias gibr='git branch'
 alias gista='git stash'
 alias gistap='git stash pop'
+
 alias gisvci='git commit -a && git svn dcommit'
 alias gisvurl='git svn info --url'
 
+alias gitvim='vim <(git show $1:$2)'
+alias gitvimdiff='vimdiff <(git show $1:$2) $2'
+alias gitvimo='vim -O <(git show $1:$2) $2'
+
 complete -o default -o nospace -F _git_checkout gico
 complete -o default -o nospace -F _git_branch gibr
-alias gitvim='vim <(git show $1:$2)'
-}gitvimdiff () {
-    vimdiff <(git show $1:$2) $2
-}
-gitvimo () {
-    vim -O <(git show $1:$2) $2
-}
 
 # subversion
-svnvimdiff ()
-{
-    vimdiff $2 $4 $3
-}
+alias svnvimdiff='vimdiff $2 $4 $3'
 
 
 # networking
