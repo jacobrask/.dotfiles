@@ -50,7 +50,6 @@ vimf ()
 }
 
 
-
 # git
 alias gist='git status'
 alias gici='git commit'
@@ -71,6 +70,7 @@ alias gitvimo='vim -O <(git show $1:$2) $2'
 
 complete -o default -o nospace -F _git_checkout gico
 complete -o default -o nospace -F _git_branch gibr
+
 
 # subversion
 alias svnvimdiff='vimdiff $2 $4 $3'
@@ -135,4 +135,12 @@ $LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\$(__git_ps1 ' (%s)')\
 $WHITE\$ $NO_COLOR"
 PS2='> '
 PS4='+ '
+
+
+# history
+# =======
+
+export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
+export HISTSIZE=10000
+shopt -s histappend
 
