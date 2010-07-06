@@ -4,3 +4,8 @@
 
 set bell-style none
 set completion-ignore-case on
+
+set blink-matching-paren on
+
+"\e[A": history-search-backward
+"\e[B": history-search-forward
