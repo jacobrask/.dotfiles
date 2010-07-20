@@ -19,10 +19,9 @@ mkcd ()
     cd "$@"
 }
 
-alias f='find . -type f -name'
-ff () 
-{ 
-    find . -type f -iname '*'"$@"'*' ; 
+alias f='find . -type f -name 2>/dev/null'
+ff() {
+    find . -type f -iname '*'"$@"'*' 2>/dev/null
 }
 fr ()
 {
