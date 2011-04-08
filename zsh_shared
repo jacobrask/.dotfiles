@@ -1,0 +1,40 @@
+#
+# ZSH settings shared across my shells.
+# ======================================
+
+# ALIASES
+
+# file system
+# ===========
+
+alias cp='cp -riv'
+alias mv='mv -iv'
+alias f='find . -type f -name 2>/dev/null'
+ff() {
+    find . -type f -iname '*'"$@"'*' 2>/dev/null
+}
+
+
+# development
+# ===========
+
+export EDITOR=vim
+alias svim='sudo vim'
+alias vimo='vim -O'
+vimf () 
+{ 
+    vim $(ack -g $@)
+}
+
+
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=10000
+setopt hist_ignore_all_dups
+setopt appendhistory autocd extendedglob
+unsetopt beep
+bindkey "\e[A" history-search-backward
+bindkey "\e[B" history-search-forward
+
+autoload -Uz compinit
+compinit
