@@ -51,14 +51,16 @@ vimf ()
 
 # git
 alias gik='gitk --all &'
-alias gia='git add '
 alias gist='git status'
-alias gici='git commit'
+alias gic='git commit'
+alias gicv='git commit -v'
 alias gidi='git diff'
 alias gico='git checkout '
 alias gipl='git pull'
-alias gips='git push'
+alias giph='git push'
 alias gibr='git branch '
+alias gi-='git reset HEAD '
+alias gi+='git add '
 gibrg ()
 {
     git branch -r | grep -i $1 | sort -f
@@ -75,7 +77,7 @@ alias gitvimo='vim -O <(git show $1:$2) $2'
 complete -o default -o nospace -F _git_checkout gico
 complete -o default -o nospace -F _git_branch gibr
 complete -o default -o nospace -F _git_pull gipl
-complete -o default -o nospace -F _git_push gips
+complete -o default -o nospace -F _git_push giph
 
 
 
