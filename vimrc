@@ -22,7 +22,6 @@ set wildmode=list:longest
 set foldmethod=indent
 set hlsearch
 colo candy
-set statusline=%F\ (%{GitBranch()})\ [%l,%v]
 set viewoptions=cursor,folds,options
 
 " SHORTCUTS
