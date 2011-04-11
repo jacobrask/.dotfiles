@@ -1,3 +1,16 @@
 [user]
     name = Jacob Rask
     email = jacob@jacobrask.net
+
+[apply]
+    whitespace = fix
+
+[color]
+    ui = auto
+    diff = auto
+
+[merge]
+    tool = vimdiff
+
+[advice]
+    statusHints = false
