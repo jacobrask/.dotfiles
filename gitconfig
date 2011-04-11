@@ -14,3 +14,6 @@
 
 [advice]
     statusHints = false
+
+[alias]
+    pullsubs = !git submodule foreach git pull origin master
