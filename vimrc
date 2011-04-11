@@ -1,14 +1,17 @@
 " GENERAL
+set nocompatible
+filetype off
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 set autochdir
+filetype on
 
 " INDENTATION
+filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-filetype plugin indent on
 syntax on
 
 " INTERFACE
@@ -30,7 +33,7 @@ command Q q
 set pastetoggle=<F11>
 map Y y$
 
-" Caps Lock to insert mote
+" Caps Lock to insert mode
 imap <F10> <ESC>
 nmap <F10> i
 imap <F2> <ESC>:w<CR>
