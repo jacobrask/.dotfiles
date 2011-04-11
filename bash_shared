@@ -51,7 +51,7 @@ vimf ()
 
 # git
 alias gik='gitk --all &'
-alias gist='git status'
+alias gis='git status'
 alias gic='git commit'
 alias gica='git commit --amend'
 alias gicv='git commit -v'
