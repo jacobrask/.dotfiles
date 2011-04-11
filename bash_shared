@@ -100,6 +100,8 @@ alias hist='history | grep'
 # development
 # ===========
 
+RED="\[\033[0;31m\]"
+LIGHT_RED="\[\033[1;31m\]"
 BROWN="\[\033[0;33m\]"
 YELLOW="\[\033[1;33m\]"
 WHITE="\[\033[1;37m\]"
@@ -112,11 +114,16 @@ GIT_PS1_SHOWDIRTYSTATE=1 #... untagged(*) and staged(+) changes
 GIT_PS1_SHOWSTASHSTATE=1 #... if something is stashed($)
 GIT_PS1_SHOWUNTRACKEDFILES=1 #... untracked files(%)
 
+if [[ $UID -eq 0 ]]; then
 PS1="${TITLEBAR}\
-$LIGHT_GRAY@\h:$YELLOW\w$BROWN\
+$RED\u@\h:$LIGHT_RED\w\
+$WHITE# $NO_COLOR"
+else
+PS1="${TITLEBAR}\
+$LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\
 \$(__git_ps1 ' (%s)')\
 $WHITE\$ $NO_COLOR"
-
+fi
 
 # history
 # =======
