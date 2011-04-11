@@ -92,18 +92,6 @@ psg ()
     ps aux | grep "[$FIRST]$REST"
 }
 alias hist='history | grep'
-drestart() 
-{ 
-  sudo /etc/rc.d/$1 restart
-}
-dstart() 
-{
-  sudo /etc/rc.d/$1 start
-}
-dstop() 
-{
-  sudo /etc/rc.d/$1 stop
-}
 
 
 
