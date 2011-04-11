@@ -51,7 +51,7 @@ vimf ()
 
 # git
 alias gik='gitk --all &'
-alias gist='git status'
+alias gis='git status'
 alias gic='git commit'
 alias gica='git commit --amend'
 alias gicv='git commit -v'
@@ -100,15 +100,12 @@ alias hist='history | grep'
 # development
 # ===========
 
-# RED="\[\033[0;31m\]"
-# LIGHT_RED="\[\033[1;31m\]"
+RED="\[\033[0;31m\]"
+LIGHT_RED="\[\033[1;31m\]"
 BROWN="\[\033[0;33m\]"
 YELLOW="\[\033[1;33m\]"
-# GREEN="\[\033[0;32m\]"
-# LIGHT_GREEN="\[\033[1;32m\]"
 WHITE="\[\033[1;37m\]"
 LIGHT_GRAY="\[\033[0;37m\]"
-# DARK_GRAY="\[\033[1;30m\]"
 NO_COLOR='\e[m'
 
 # show git branch in prompt
@@ -117,12 +114,16 @@ GIT_PS1_SHOWDIRTYSTATE=1 #... untagged(*) and staged(+) changes
 GIT_PS1_SHOWSTASHSTATE=1 #... if something is stashed($)
 GIT_PS1_SHOWUNTRACKEDFILES=1 #... untracked files(%)
 
+if [[ $UID -eq 0 ]]; then
 PS1="${TITLEBAR}\
-$LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\$(__git_ps1 ' (%s)')\
+$RED\u@\h:$LIGHT_RED\w\
+$WHITE# $NO_COLOR"
+else
+PS1="${TITLEBAR}\
+$LIGHT_GRAY\u@\h:$YELLOW\w$BROWN\
+\$(__git_ps1 ' (%s)')\
 $WHITE\$ $NO_COLOR"
-PS2='> '
-PS4='+ '
-
+fi
 
 # history
 # =======
