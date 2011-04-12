@@ -7,7 +7,6 @@
 
 [color]
     ui = auto
-    diff = auto
 
 [merge]
     tool = vimdiff
