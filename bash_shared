@@ -35,7 +35,15 @@ fcnt() {
         find . -type f -iname '*'"$@"'*' | wc -l
     fi
 }
-
+s() {
+    if type -P ack &>/dev/null; then
+        ack -aC $1
+    elif type -P ack-grep &>/dev/null; then
+        ack-grep -aC $1
+    else
+        grep -rC2 --color $1 *
+    fi
+}
 
 # development
 # ===========
