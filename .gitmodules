@@ -16,3 +16,6 @@
 [submodule "vim/bundle/css-oneline-folding"]
 	path = vim/bundle/css-oneline-folding
 	url = https://github.com/vim-scripts/CSS-one-line--multi-line-folding.git
+[submodule "vim/bundle/perl"]
+	path = vim/bundle/perl
+	url = https://github.com/petdance/vim-perl
