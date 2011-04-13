@@ -13,3 +13,6 @@
 
 [advice]
     statusHints = false
+
+[push]
+    default = tracking
