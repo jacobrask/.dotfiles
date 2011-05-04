@@ -8,6 +8,9 @@
 [color]
     ui = auto
 
+[branch]
+    autosetuprebase = remote
+
 [merge]
     tool = vimdiff
 
