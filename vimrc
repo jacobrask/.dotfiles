@@ -24,6 +24,7 @@ set wildmenu
 set wildmode=list:longest
 set foldmethod=indent
 set hlsearch
+set visualbell t_vb=
 colo candy
 set viewoptions=cursor,folds,options
 
