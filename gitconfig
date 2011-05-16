@@ -14,8 +14,13 @@
 [merge]
     tool = vimdiff
 
+[mergetool]
+	keepBackup = false
+
 [advice]
     statusHints = false
 
 [push]
     default = tracking
+
+
