@@ -2,6 +2,9 @@
     name = Jacob Rask
     email = jacob@jacobrask.net
 
+[core]
+	excludesfile = ~/.dotfiles/gitignore
+
 [apply]
     whitespace = fix
 

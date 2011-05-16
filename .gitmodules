@@ -19,3 +19,6 @@
 [submodule "vim/bundle/perl"]
 	path = vim/bundle/perl
 	url = https://github.com/petdance/vim-perl
+[submodule "vim/bundle/css-pretty"]
+	path = vim/bundle/css-pretty
+	url = https://github.com/vim-scripts/Css-Pretty.git
