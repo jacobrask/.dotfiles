@@ -1,2 +1,3 @@
 .directory
 *.swp
+.sass-cache
