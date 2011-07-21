@@ -22,3 +22,6 @@
 [submodule "vim/bundle/css-pretty"]
 	path = vim/bundle/css-pretty
 	url = https://github.com/vim-scripts/Css-Pretty.git
+[submodule "vim/bundle/scss-syntax"]
+	path = vim/bundle/scss-syntax
+	url = https://github.com/cakebaker/scss-syntax.vim
