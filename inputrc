@@ -1,11 +1,17 @@
-#
-# INPUT settings shared across my shells.
-# =======================================
+# readline settings shared across my shells.
 
-set bell-style none
+# Show the last part of a file on tab completion
+set completion-prefix-display-length 2
+# Show tab completion options immediately
+set show-all-if-ambiguous on
+# Ignore case on completion
 set completion-ignore-case on
+# Treat _ and - as equivalent
+set completion-map-case on
 
 set blink-matching-paren on
+set bell-style none
 
+# Search history backwards and forwards on arrow keys
 "\e[A": history-search-backward
 "\e[B": history-search-forward
