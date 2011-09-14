@@ -3,7 +3,7 @@
     email = jacob@jacobrask.net
 
 [core]
-	excludesfile = ~/.dotfiles/gitignore
+    excludesfile = ~/.dotfiles/gitignore
 
 [apply]
     whitespace = fix
@@ -18,12 +18,10 @@
     tool = vimdiff
 
 [mergetool]
-	keepBackup = false
+    keepBackup = false
 
 [advice]
     statusHints = false
 
 [push]
     default = tracking
-
-
