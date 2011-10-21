@@ -1,4 +1,4 @@
 .directory
-*.swp
+*.sw?
 .sass-cache
 node_modules
