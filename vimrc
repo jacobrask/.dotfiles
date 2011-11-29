@@ -5,6 +5,7 @@ call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
 set autochdir
 filetype on
+let mapleader = ","
 
 " INDENTATION
 filetype plugin indent on
@@ -42,3 +43,8 @@ nmap <F2> :w<CR>
 
 " Alt -> switches split (for Kinesis keyboard)
 map <Esc>[1;3C <C-W><C-w>
+
+vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
+map <leader>c :CoffeeCompile<CR>
+
+command -nargs=1 C CoffeeCompile | :<args>
