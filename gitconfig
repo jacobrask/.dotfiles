@@ -12,7 +12,7 @@
     ui = auto
 
 [branch]
-    autosetuprebase = remote
+    autosetuprebase = always
 
 [merge]
     tool = vimdiff
