@@ -14,6 +14,7 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 syntax on
+nnoremap <leader>p p`[v`]=
 
 " INTERFACE
 set nu
@@ -27,7 +28,7 @@ set foldmethod=indent
 set hlsearch
 set visualbell t_vb=
 colo candy
-set viewoptions=cursor,folds,options
+set viewoptions=cursor,options
 
 " SHORTCUTS
 command W w
