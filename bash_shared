@@ -60,6 +60,10 @@ vimf ()
     vim $(ack -g $@)
 }
 
+# If we have Node Version Manager installed, source it.
+if [ -f ~/.nvm/nvm.sh ]; then
+    . ~/.nvm/nvm.sh
+fi
 
 # git
 alias gik='gitk --all &'
