@@ -18,16 +18,17 @@ mkcd ()
     mkdir -p "$@"
     cd "$@"
 }
-
 alias f='find . -type f -name 2>/dev/null'
-ff() {
+ff()
+{
     find . -type f -iname '*'"$@"'*' 2>/dev/null
 }
 fr ()
 {
     find . -type f -iname "$1" -exec perl -pi -e "$2" {} \;
 }
-fcnt() { 
+fcnt()
+{
     if [ -z "$@" ]
     then
         find . -type f | wc -l
@@ -35,7 +36,8 @@ fcnt() {
         find . -type f -iname '*'"$@"'*' | wc -l
     fi
 }
-s() {
+s()
+{
     if type -P ack &>/dev/null; then
         ack -aC $1
     elif type -P ack-grep &>/dev/null; then
@@ -43,9 +45,6 @@ s() {
     else
         grep -rC2 --color $1 *
     fi
-}
-switchfile() {
-    mv $1 $1.tmp && mv $2 $1 && mv $1.tmp $2
 }
 
 
@@ -71,7 +70,7 @@ alias gis='git status'
 alias gic='git commit'
 alias gica='git commit --amend'
 alias gicv='git commit -v'
-alias gidi='git --no-pager diff -w --color-words'
+alias gidi='git diff -w'
 alias gico='git checkout '
 alias gipl='git pull'
 alias giph='git push'
@@ -97,7 +96,6 @@ complete -o default -o nospace -F _git_pull gipl
 complete -o default -o nospace -F _git_push giph
 
 
-
 # system
 # ======
 
@@ -108,7 +106,6 @@ psg ()
     ps aux | grep "[$FIRST]$REST"
 }
 alias hist='history | grep'
-
 
 
 # CONFIGURATION
