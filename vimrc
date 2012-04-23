@@ -13,7 +13,6 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=4
 set expandtab
-syntax on
 nnoremap <leader>p p`[v`]=
 
 " INTERFACE
@@ -24,10 +23,11 @@ set laststatus=2
 set ruler
 set wildmenu
 set wildmode=list:longest
-set foldmethod=indent
 set hlsearch
 set visualbell t_vb=
-colo candy
+
+" COLORS
+set t_Co=256
 set viewoptions=cursor,options
 
 " SHORTCUTS
