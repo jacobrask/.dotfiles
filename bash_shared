@@ -62,6 +62,7 @@ vimf ()
 # If we have Node Version Manager installed, source it.
 if [ -f ~/.nvm/nvm.sh ]; then
     . ~/.nvm/nvm.sh
+    nvm use default
 fi
 
 # git
@@ -73,24 +74,15 @@ alias gicv='git commit -v'
 alias gidi='git diff -w'
 alias gico='git checkout '
 alias gipl='git pull'
-alias giph='git push'
+alias giph='git push --recurse-submodules=on-demand'
 alias gibr='git branch '
 alias gi-='git reset HEAD '
 alias gi+='git add '
-gibrg ()
-{
-    git branch -r | grep -i $1 | sort -f
-}
+
 alias gista='git stash'
 alias gistap='git stash pop'
-alias gistapf='git stash show -p | git apply && git stash drop'
 alias gihist='git log --pretty=format:"%h %ad | %s%d [%an]" --graph --date=short'
 
-alias gitvim='vim <(git show $1:$2)'
-alias gitvimdiff='vimdiff <(git show $1:$2) $2'
-alias gitvimo='vim -O <(git show $1:$2) $2'
-
-complete -o default -o nospace -F _git_checkout gico
 complete -o default -o nospace -F _git_branch gibr
 complete -o default -o nospace -F _git_pull gipl
 complete -o default -o nospace -F _git_push giph
@@ -144,6 +136,6 @@ fi
 # =======
 
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-export HISTSIZE=10000
+export HISTSIZE=100000
 shopt -s histappend
 
