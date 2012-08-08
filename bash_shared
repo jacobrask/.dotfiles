@@ -127,7 +127,7 @@ $BLUE_BOLD\w\
 $BLUE # $NO_COLOR"
 else
 PS1="${TITLEBAR}\
-$TURQ\h $BLUE_BOLD\w$BROWN\
+$TURQ\h $BLUE_BOLD\w$NO_COLOR\
 \$(__git_ps1 ' (%s)')\
  $BLUE\$ $NO_COLOR"
 fi
