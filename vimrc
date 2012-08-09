@@ -6,13 +6,14 @@ call pathogen#helptags()
 set autochdir
 filetype on
 let mapleader = ","
+set nowritebackup
 
 
 " INDENTATION
 filetype plugin indent on
-set tabstop=4
-set shiftwidth=4
-set softtabstop=4
+set tabstop=2
+set shiftwidth=2
+set softtabstop=2
 set expandtab
 nnoremap <leader>p p`[v`]=
 
@@ -36,7 +37,7 @@ set viewoptions=cursor,options
 " SHORTCUTS
 command W w
 command Q q
-set pastetoggle=<F11>
+set pastetoggle=<F9>
 map Y y$
 
 " Caps Lock to insert mode
