@@ -2,5 +2,5 @@ keycode 34 = aring Aring aring Aring braceleft bracketleft
 keycode 35 = slash asciitilde dead_ogonek section dead_ogonek section
 keycode 48 = adiaeresis Adiaeresis adiaeresis Adiaeresis braceright bracketright
 keycode 49 = asciicircum onehalf
-keycode 66 = F10
+keycode 66 = Super_L
 clear Lock
