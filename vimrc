@@ -1,8 +1,6 @@
 " GENERAL
 set nocompatible
 filetype off
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
 set autochdir
 filetype on
 let mapleader = ","
@@ -51,6 +49,16 @@ map <Esc>[1;3C <C-W><C-w>
 
 
 " PLUGINS settings
+
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+
+Bundle 'cakebaker/scss-syntax.vim'
+Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fugitive'
+
 
 " CoffeeScript
 vmap <leader>c <esc>:'<,'>:CoffeeCompile<CR>
