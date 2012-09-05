@@ -31,7 +31,6 @@ set visualbell t_vb=
 set t_Co=256
 set viewoptions=cursor,options
 
-
 " SHORTCUTS
 command W w
 command Q q
@@ -58,6 +57,9 @@ Bundle 'gmarik/vundle'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
+
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+colorscheme Tomorrow-Night
 
 
 " CoffeeScript
