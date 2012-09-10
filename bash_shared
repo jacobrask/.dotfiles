@@ -9,6 +9,7 @@
 
 alias ..='cd ..'
 alias ...='cd ../..'
+alias l='ls -1'
 alias ls='ls --color=auto'
 alias la='ls -lhA'
 alias cp='cp -riv'
