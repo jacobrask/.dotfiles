@@ -57,6 +57,7 @@ Bundle 'gmarik/vundle'
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 colorscheme Tomorrow-Night
