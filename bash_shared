@@ -63,7 +63,6 @@ vimf ()
 # If we have Node Version Manager installed, source it.
 if [ -f ~/.nvm/nvm.sh ]; then
     . ~/.nvm/nvm.sh
-    nvm use default
 fi
 
 # git
