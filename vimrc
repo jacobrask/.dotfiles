@@ -37,11 +37,9 @@ command Q q
 set pastetoggle=<F9>
 map Y y$
 
-" Caps Lock to insert mode
-imap <F10> <ESC>
-nmap <F10> i
 imap <F2> <ESC>:w<CR>
 nmap <F2> :w<CR>
+nmap <C-j> :JSHint<CR>
 
 " Alt -> switches split (for Kinesis keyboard)
 map <Esc>[1;3C <C-W><C-w>
@@ -58,6 +56,7 @@ Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 
+Bundle 'walm/jshint.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 colorscheme Tomorrow-Night
 
