@@ -4,3 +4,4 @@ keycode 48 = adiaeresis Adiaeresis adiaeresis Adiaeresis braceright bracketright
 keycode 49 = asciicircum onehalf
 keycode 66 = Super_L
 clear Lock
+pointer = 1 2 3 5 4 6 7 8 9 10 11 12
