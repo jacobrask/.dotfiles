@@ -28,6 +28,7 @@ set hlsearch
 set visualbell t_vb=
 
 " Colors
+syntax on
 set t_Co=256
 set viewoptions=cursor,options
 
@@ -59,6 +60,8 @@ Bundle 'tpope/vim-surround'
 
 Bundle 'walm/jshint.vim'
 Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'kien/rainbow_parentheses.vim'
+Bundle 'guns/vim-clojure-static'
 colorscheme Tomorrow-Night
 
 
@@ -69,3 +72,8 @@ command -nargs=1 C CoffeeCompile | :<args>
 
 " CtrlP
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,.sass-cache
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
