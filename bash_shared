@@ -40,10 +40,8 @@ fcnt()
 }
 s()
 {
-    if type -P ack &>/dev/null; then
-        ack -aC $1
-    elif type -P ack-grep &>/dev/null; then
-        ack-grep -aC $1
+    if type -P ag &>/dev/null; then
+        ag $1
     else
         grep -rC2 --color $1 *
     fi
@@ -83,7 +81,7 @@ vimf ()
 
 # If we have Node Version Manager installed, source it.
 if [ -f ~/.nvm/nvm.sh ]; then
-    . ~/.nvm/nvm.sh
+   . ~/.nvm/nvm.sh
 fi
 
 # git

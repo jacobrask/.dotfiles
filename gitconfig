@@ -24,4 +24,7 @@
     statusHints = false
 
 [push]
-    default = tracking
+    default = simple
+
+[alias]
+    branchdate = !"for k in `git branch | sed s/^..//`; do echo `git log -1 --pretty=format:\" $k %Cgreen%ci%Creset\" $k --`;done | sort -k 2"

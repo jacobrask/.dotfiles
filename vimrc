@@ -26,11 +26,13 @@ set wildmenu
 set wildmode=list:longest
 set hlsearch
 set visualbell t_vb=
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Colors
 syntax on
 set t_Co=256
 set viewoptions=cursor,options
+let base16colorspace=256
 
 " SHORTCUTS
 command W w
@@ -55,13 +57,19 @@ Bundle 'gmarik/vundle'
 
 Bundle 'cakebaker/scss-syntax.vim'
 Bundle 'kien/ctrlp.vim'
+Bundle 'tpope/vim-fireplace'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
-
 Bundle 'walm/jshint.vim'
-Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'guns/vim-clojure-static'
+Bundle "tobyS/skeletons.vim"
+Bundle 'SirVer/ultisnips'
+Bundle 'rizzatti/dash.vim'
+
+Bundle 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
+Bundle 'chriskempson/base16-vim'
+
 colorscheme Tomorrow-Night
 
 
