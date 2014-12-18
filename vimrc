@@ -33,6 +33,19 @@ set t_Co=256
 set viewoptions=cursor,options
 let base16colorspace=256
 
+
+" PLUGINS
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
+
+Plugin 'tpope/vim-surround'
+
+Plugin 'walm/jshint.vim'
+nmap <C-j> :JSHint<CR>
+
+
 " SHORTCUTS
 command W w
 command Q q
