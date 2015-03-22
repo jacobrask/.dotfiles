@@ -48,6 +48,11 @@ au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
+" tern autocompletion
+Plugin 'marijnh/tern_for_vim'
+let g:tern_map_keys=1
+let g:tern#is_show_argument_hints_enabled=1
+
 call vundle#end()
 filetype plugin on
 
