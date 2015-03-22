@@ -2,30 +2,30 @@
 set nocompatible
 filetype off
 set autochdir
-filetype on
-let mapleader = ","
+let mapleader=","
 set nowritebackup
 
 
 " INDENTATION
 filetype plugin indent on
-set tabstop=2
+set autoindent
+set expandtab
 set shiftwidth=2
 set softtabstop=2
-set expandtab
+set tabstop=2
 nnoremap <leader>p p`[v`]=
 
 
 " INTERFACE
-set nu
-set showcmd
-set nocp
+set hlsearch
 set laststatus=2
+set nocp
+set nu
 set ruler
+set showcmd
+set visualbell t_vb=
 set wildmenu
 set wildmode=list:longest
-set hlsearch
-set visualbell t_vb=
 
 " Colors
 syntax on
@@ -35,25 +35,25 @@ let base16colorspace=256
 
 
 " PLUGINS
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
-Plugin 'tpope/vim-surround'
-
-Plugin 'walm/jshint.vim'
-nmap <C-j> :JSHint<CR>
+call vundle#end()
+filetype plugin on
 
 
 " SHORTCUTS
-command W w
-command Q q
-set pastetoggle=<F9>
-map Y y$
 
+" common typos
+command Q q
+command W w
 imap <F2> <ESC>:w<CR>
 nmap <F2> :w<CR>
 
-" Alt -> switches split (for Kinesis keyboard)
-map <Esc>[1;3C <C-W><C-w>
+set pastetoggle=<F9>
+
+map Y y$
+
+nnoremap <leader><space> :nohl<CR>
