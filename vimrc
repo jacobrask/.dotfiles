@@ -40,6 +40,14 @@ call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
 
+" rainbow parentheses
+Plugin 'kien/rainbow_parentheses.vim'
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
 call vundle#end()
 filetype plugin on
 
