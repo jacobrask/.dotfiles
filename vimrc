@@ -35,7 +35,7 @@ let base16colorspace=256
 
 
 " PLUGINS
-set rtp+=vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'gmarik/Vundle.vim'
