@@ -23,6 +23,7 @@ set nocp
 set nu
 set ruler
 set showcmd
+set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set visualbell t_vb=
 set wildmenu
 set wildmode=list:longest
@@ -42,11 +43,20 @@ Plugin 'gmarik/Vundle.vim'
 
 " rainbow parentheses
 Plugin 'kien/rainbow_parentheses.vim'
-
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" syntastic linting
+Plugin 'scrooloose/syntastic'
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_javascript_checkers = ['eslint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " tern autocompletion
 Plugin 'marijnh/tern_for_vim'
