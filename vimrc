@@ -28,12 +28,6 @@ set visualbell t_vb=
 set wildmenu
 set wildmode=list:longest
 
-" Colors
-syntax on
-set t_Co=256
-set viewoptions=cursor,options
-let base16colorspace=256
-
 
 " PLUGINS
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -47,6 +41,11 @@ au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
+
+" solarized theme
+Plugin 'altercation/vim-colors-solarized'
+set background=dark
+let g:solarized_termcolors=256
 
 " syntastic linting
 Plugin 'scrooloose/syntastic'
@@ -65,6 +64,12 @@ let g:tern#is_show_argument_hints_enabled=1
 
 call vundle#end()
 filetype plugin on
+
+
+" COLORS
+syntax on
+set t_Co=256
+colorscheme solarized
 
 
 " SHORTCUTS
