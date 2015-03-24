@@ -17,7 +17,6 @@ nnoremap <leader>p p`[v`]=
 
 
 " INTERFACE
-set hlsearch
 set laststatus=2
 set nocp
 set nu
@@ -28,6 +27,10 @@ set visualbell t_vb=
 set wildmenu
 set wildmode=list:longest
 
+" search
+set hlsearch
+set ignorecase
+set smartcase
 
 " PLUGINS
 set rtp+=~/.vim/bundle/Vundle.vim
