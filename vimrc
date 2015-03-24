@@ -85,3 +85,5 @@ set pastetoggle=<F9>
 map Y y$
 
 nnoremap <leader><space> :nohl<CR>
+nnoremap <leader>w :w!<cr>
+vnoremap <leader>s :sort i<CR>
