@@ -2,8 +2,17 @@
 set nocompatible
 filetype off
 set autochdir
-let mapleader=","
+let mapleader="\<Space>"
 set nowritebackup
+
+" Return to last edit position when opening files
+autocmd BufReadPost *
+  \ if line("'\"") > 0 && line("'\"") <= line("$") |
+  \   exe "normal! g`\"" |
+  \ endif
+
+" Remember info about open buffers on close
+set viminfo^=%
 
 
 " INDENTATION
@@ -87,6 +96,7 @@ set pastetoggle=<F9>
 
 map Y y$
 
-nnoremap <leader><space> :nohl<CR>
-nnoremap <leader>w :w!<cr>
+nnoremap <leader>n :nohl<CR>
+nnoremap <leader>e :e
+nnoremap <leader>w :w!<CR>
 vnoremap <leader>s :sort i<CR>
