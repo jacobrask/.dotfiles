@@ -65,6 +65,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_mode_map = {
+    \ "mode": "active",
+    \ "passive_filetypes": ["typescript"] }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -73,6 +76,16 @@ set statusline+=%*
 Plugin 'marijnh/tern_for_vim'
 let g:tern_map_keys=1
 let g:tern#is_show_argument_hints_enabled=1
+
+
+" TypeScript plugins
+" syntax
+Plugin 'leafgarland/typescript-vim'
+" autocompletion
+Plugin 'Quramy/tsuquyomi'
+
+" vimproc command execution (required for tsuquyomi)
+Plugin 'Shougo/vimproc.vim'
 
 call vundle#end()
 filetype plugin on
