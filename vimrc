@@ -27,6 +27,8 @@ nnoremap <leader>p p`[v`]=
 
 " INTERFACE
 set laststatus=2
+set lines=50
+set columns=160
 set nocp
 set nu
 set ruler
@@ -87,6 +89,8 @@ Plugin 'Quramy/tsuquyomi'
 " vimproc command execution (required for tsuquyomi)
 Plugin 'Shougo/vimproc.vim'
 
+Plugin 'mxw/vim-jsx'
+
 call vundle#end()
 filetype plugin on
 
@@ -112,4 +116,5 @@ map Y y$
 nnoremap <leader>n :nohl<CR>
 nnoremap <leader>e :e
 nnoremap <leader>w :w!<CR>
+nnoremap <leader>q :q<CR>
 vnoremap <leader>s :sort i<CR>
