@@ -1,9 +1,11 @@
 " GENERAL
+set exrc
 set nocompatible
 filetype off
 set autochdir
 let mapleader="\<Space>"
 set nowritebackup
+set secure
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
