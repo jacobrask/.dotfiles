@@ -28,6 +28,7 @@ nnoremap <leader>p p`[v`]=
 
 
 " INTERFACE
+set cursorline
 set laststatus=2
 set lines=50
 set columns=160
@@ -35,6 +36,7 @@ set nocp
 set nu
 set ruler
 set showcmd
+set showmatch
 set statusline=%<%f\ %h%m%r%=%-14.(%l,%c%V%)\ %P
 set visualbell t_vb=
 set wildmenu
@@ -91,7 +93,14 @@ Plugin 'Quramy/tsuquyomi'
 " vimproc command execution (required for tsuquyomi)
 Plugin 'Shougo/vimproc.vim'
 
+" Syntax highlighting for JSX
 Plugin 'mxw/vim-jsx'
+
+" Silver Searcher
+Plugin 'rking/ag.vim'
+
+Plugin 'kien/ctrlp.vim'
+let g:ctrlp_working_path_mode = 'ra'
 
 call vundle#end()
 filetype plugin on
@@ -115,8 +124,11 @@ set pastetoggle=<F9>
 
 map Y y$
 
+nnoremap <leader>b :bn<CR>
+nnoremap <leader>l :ls<CR>
 nnoremap <leader>n :nohl<CR>
 nnoremap <leader>e :e
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q<CR>
+nnoremap <leader>a :Ag
 vnoremap <leader>s :sort i<CR>
