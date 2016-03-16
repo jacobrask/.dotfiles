@@ -162,3 +162,5 @@ export HISTFILESIZE=$HISTSIZE
 export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
 shopt -s histappend
 
+
+export PATH=$PATH:~/bin
