@@ -83,16 +83,6 @@ Plugin 'marijnh/tern_for_vim'
 let g:tern_map_keys=1
 let g:tern#is_show_argument_hints_enabled=1
 
-
-" TypeScript plugins
-" syntax
-Plugin 'leafgarland/typescript-vim'
-" autocompletion
-Plugin 'Quramy/tsuquyomi'
-
-" vimproc command execution (required for tsuquyomi)
-Plugin 'Shougo/vimproc.vim'
-
 " Syntax highlighting for JSX
 Plugin 'mxw/vim-jsx'
 
