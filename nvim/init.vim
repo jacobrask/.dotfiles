@@ -1,13 +1,22 @@
 " GENERAL
 
-" Change working directory to open file's
+" Track current file's working directory
 set autochdir
+let g:netrw_keepdir=0
+let g:netrw_silent=1
 
 " Return to last edit position when opening files
 autocmd BufReadPost *
   \ if line("'\"") > 0 && line("'\"") <= line("$") |
   \   exe "normal! g`\"" |
   \ endif
+
+
+" Show the current dir with netrw on startup without filename
+augroup VimStartup
+  au!
+  au VimEnter * if expand("%") == "" | e . | endif
+augroup END
 
 
 " INTERFACE
