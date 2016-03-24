@@ -5,17 +5,15 @@ set autochdir
 let g:netrw_keepdir=0
 let g:netrw_silent=1
 
-" Return to last edit position when opening files
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
-
-
-" Show the current dir with netrw on startup without filename
 augroup VimStartup
-  au!
-  au VimEnter * if expand("%") == "" | e . | endif
+  autocmd!
+  " Show the current dir with netrw on startup without filename
+  autocmd VimEnter * if expand("%") == "" | e . | endif
+  " Return to last edit position when opening files
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
 augroup END
 
 
@@ -23,7 +21,6 @@ augroup END
 
 set cursorline
 set hlsearch
-set number
 set ruler
 set scrolloff=3
 set showcmd
@@ -32,14 +29,18 @@ set showmatch
 set ignorecase
 set smartcase
 
-" Enable rainbow parentheses
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+autocmd BufWinEnter * set number
 
-au VimEnter * set background=dark
-au VimEnter * colorscheme solarized
+" Enable rainbow parentheses
+autocmd VimEnter * RainbowParenthesesToggle
+autocmd Syntax * RainbowParenthesesLoadRound
+autocmd Syntax * RainbowParenthesesLoadSquare
+autocmd Syntax * RainbowParenthesesLoadBraces
+
+" Set color scheme
+autocmd VimEnter * set background=dark
+autocmd VimEnter * colorscheme solarized
+
 set t_Co=256
 let g:solarized_termcolors=256
 
@@ -64,6 +65,7 @@ set expandtab
 set shiftwidth=2
 set softtabstop=2
 set tabstop=2
+
 autocmd FileType php setlocal shiftwidth=4 tabstop=4
 
 
