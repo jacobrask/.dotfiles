@@ -83,14 +83,17 @@ Plugin 'marijnh/tern_for_vim'
 let g:tern_map_keys=1
 let g:tern#is_show_argument_hints_enabled=1
 
+" Improved syntax highlighting for JavaScript
+Plugin 'pangloss/vim-javascript'
 " Syntax highlighting for JSX
 Plugin 'mxw/vim-jsx'
 
 " Silver Searcher
 Plugin 'rking/ag.vim'
 
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 let g:ctrlp_working_path_mode = 'ra'
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 call vundle#end()
 filetype plugin on
