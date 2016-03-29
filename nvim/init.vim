@@ -19,6 +19,8 @@ augroup END
 
 " INTERFACE
 
+" Reduce the number of hit-enter prompts
+set cmdheight=2
 set cursorline
 set hlsearch
 set ruler
@@ -40,9 +42,10 @@ autocmd Syntax * RainbowParenthesesLoadBraces
 " Set color scheme
 autocmd VimEnter * set background=dark
 autocmd VimEnter * colorscheme solarized
-
-set t_Co=256
 let g:solarized_termcolors=256
+if !has('gui_running')
+  set t_Co=256
+endif
 
 
 " PLUGINS
@@ -54,6 +57,7 @@ Plug 'janko-m/vim-test' " Run tests
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mxw/vim-jsx' " JSX Syntax Highlighting
 Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-vinegar' " netrw enhancement
 call plug#end()
 
 
