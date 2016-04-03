@@ -57,6 +57,7 @@ Plug 'benekastah/neomake'
 Plug 'janko-m/vim-test' " Run tests
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'mxw/vim-jsx' " JSX Syntax Highlighting
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-fugitive' " Git
 Plug 'tpope/vim-vinegar' " netrw enhancement
 call plug#end()
