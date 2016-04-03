@@ -51,6 +51,7 @@ endif
 " PLUGINS
 
 call plug#begin('~/config/nvim/plugged')
+Plug 'airblade/vim-gitgutter' " Git diff in the gutter
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
 Plug 'janko-m/vim-test' " Run tests
