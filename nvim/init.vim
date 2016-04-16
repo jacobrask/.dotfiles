@@ -90,15 +90,27 @@ nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q<CR>
 vnoremap <leader>s :sort i<CR>
 
-" navigate between windows in terminal mode
-tnoremap <A-h> <C-\><C-n><C-w>h
-tnoremap <A-j> <C-\><C-n><C-w>j
-tnoremap <A-k> <C-\><C-n><C-w>k
-tnoremap <A-l> <C-\><C-n><C-w>l
-nnoremap <A-h> <C-w>h
-nnoremap <A-j> <C-w>j
-nnoremap <A-k> <C-w>k
-nnoremap <A-l> <C-w>l
+" Navigate between windows
+tnoremap <S-A-h> <C-\><C-n><C-w>h
+tnoremap <S-A-j> <C-\><C-n><C-w>j
+tnoremap <S-A-k> <C-\><C-n><C-w>k
+tnoremap <S-A-l> <C-\><C-n><C-w>l
+nnoremap <S-A-h> <C-w>h
+nnoremap <S-A-j> <C-w>j
+nnoremap <S-A-k> <C-w>k
+nnoremap <S-A-l> <C-w>l
+inoremap <S-A-h> <C-w>h
+inoremap <S-A-j> <C-w>j
+inoremap <S-A-k> <C-w>k
+inoremap <S-A-l> <C-w>l
+
+" Move lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
 
 " Run tests with vim-test
 nmap <silent> <leader>t :wall<CR> :TestNearest<CR>
