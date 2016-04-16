@@ -79,9 +79,10 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=4
 
 let mapleader="\<Space>"
 set pastetoggle=<F9>
-imap <F2> <ESC>:w<CR>
-nmap <F2> :w<CR>
-map Y y$
+inoremap <F2> <C-o>:w<CR>
+nnoremap <F2> :w<CR>
+onoremap p i(
+nnoremap Y y$
 nnoremap <leader>b :bn<CR>
 nnoremap <leader>l :ls<CR>
 nnoremap <leader>n :nohl<CR>
