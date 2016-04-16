@@ -75,14 +75,14 @@ set tabstop=2
 autocmd FileType php setlocal shiftwidth=4 tabstop=4
 
 
-" SHORTCUTS
+" MAPPINGS
 
 let mapleader="\<Space>"
 set pastetoggle=<F9>
 inoremap <F2> <C-o>:w<CR>
 nnoremap <F2> :w<CR>
-onoremap p i(
 nnoremap Y y$
+
 nnoremap <leader>b :bn<CR>
 nnoremap <leader>l :ls<CR>
 nnoremap <leader>n :nohl<CR>
@@ -90,6 +90,15 @@ nnoremap <leader>e :e
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q<CR>
 vnoremap <leader>s :sort i<CR>
+
+" Operators
+onoremap p i(
+onoremap in( :<c-u>normal! f(vi(<CR>
+onoremap an( :<c-u>normal! f(va(<CR>
+onoremap in[ :<c-u>normal! f[vi[<CR>
+onoremap an[ :<c-u>normal! f[va[<CR>
+onoremap in{ :<c-u>normal! f{vi{<CR>
+onoremap an{ :<c-u>normal! f{va{<CR>
 
 " Navigate between windows
 tnoremap <S-A-h> <C-\><C-n><C-w>h
