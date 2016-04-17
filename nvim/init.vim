@@ -54,7 +54,6 @@ call plug#begin('~/config/nvim/plugged')
 Plug 'airblade/vim-gitgutter' " Git diff in the gutter
 Plug 'altercation/vim-colors-solarized'
 Plug 'benekastah/neomake'
-Plug 'bkad/CamelCaseMotion'
 Plug 'janko-m/vim-test' " Run tests
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'sheerun/vim-polyglot'
@@ -133,5 +132,3 @@ autocmd! BufWritePost * Neomake
 " Open the Error window on errors
 let g:neomake_open_list = 2
 let test#strategy = "neovim"
-
-call camelcasemotion#CreateMotionMappings('')
