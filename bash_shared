@@ -163,3 +163,5 @@ shopt -s histappend
 
 
 export PATH=$PATH:~/bin
+
+source $HOME/.dotfiles/bash_prompt
