@@ -128,7 +128,8 @@ nmap <silent> <leader>tf :wall<CR> :TestFile<CR>
 nmap <silent> <leader>ta :wall<CR> :TestSuite<CR>
 
 " Run Neomake on each save
-autocmd! BufWritePost * Neomake
+autocmd! BufWrite * Neomake
+autocmd! InsertLeave * Neomake
 " Open the Error window on errors
 let g:neomake_open_list = 2
 let test#strategy = "neovim"
