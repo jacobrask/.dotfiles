@@ -1,33 +1,33 @@
 " GENERAL
+
+" Track current file's working directory
+set autochdir
+let g:netrw_keepdir=0
+let g:netrw_silent=1
+
 set exrc
 set nocompatible
 filetype off
-set autochdir
-let mapleader="\<Space>"
 set nowritebackup
 set secure
-
-" Return to last edit position when opening files
-autocmd BufReadPost *
-  \ if line("'\"") > 0 && line("'\"") <= line("$") |
-  \   exe "normal! g`\"" |
-  \ endif
-
 " Remember info about open buffers on close
 set viminfo^=%
 
-
-" INDENTATION
-filetype plugin indent on
-set autoindent
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
-nnoremap <leader>p p`[v`]=
+augroup VimStartup
+  autocmd!
+  " Show the current dir with netrw on startup without filename
+  autocmd VimEnter * if expand("%") == "" | e . | endif
+  " Return to last edit position when opening files
+  autocmd BufReadPost *
+    \ if line("'\"") > 0 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+augroup END
 
 
 " INTERFACE
+
+set cmdheight=2
 set cursorline
 set laststatus=2
 set lines=50
@@ -46,6 +46,19 @@ set wildmode=list:longest
 set hlsearch
 set ignorecase
 set smartcase
+
+
+" INDENTATION
+
+filetype plugin indent on
+set autoindent
+set expandtab
+set shiftwidth=2
+set softtabstop=2
+set tabstop=2
+
+autocmd FileType php setlocal shiftwidth=4 tabstop=4
+
 
 " PLUGINS
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -105,17 +118,13 @@ set t_Co=256
 colorscheme solarized
 
 
-" SHORTCUTS
+" MAPPINGS
 
-" common typos
-command Q q
-command W w
-imap <F2> <ESC>:w<CR>
-nmap <F2> :w<CR>
-
+let mapleader="\<Space>"
 set pastetoggle=<F9>
-
-map Y y$
+inoremap <F2> <C-o>:w<CR>
+nnoremap <F2> :w<CR>
+nnoremap Y y$
 
 nnoremap <leader>b :bn<CR>
 nnoremap <leader>l :ls<CR>
@@ -123,5 +132,31 @@ nnoremap <leader>n :nohl<CR>
 nnoremap <leader>e :e
 nnoremap <leader>w :w!<CR>
 nnoremap <leader>q :q<CR>
-nnoremap <leader>a :Ag
 vnoremap <leader>s :sort i<CR>
+
+" Operators
+onoremap p i(
+onoremap in( :<c-u>normal! f(vi(<CR>
+onoremap an( :<c-u>normal! f(va(<CR>
+onoremap in[ :<c-u>normal! f[vi[<CR>
+onoremap an[ :<c-u>normal! f[va[<CR>
+onoremap in{ :<c-u>normal! f{vi{<CR>
+onoremap an{ :<c-u>normal! f{va{<CR>
+
+" Navigate between windows
+nnoremap <S-A-h> <C-w>h
+nnoremap <S-A-j> <C-w>j
+nnoremap <S-A-k> <C-w>k
+nnoremap <S-A-l> <C-w>l
+inoremap <S-A-h> <C-w>h
+inoremap <S-A-j> <C-w>j
+inoremap <S-A-k> <C-w>k
+inoremap <S-A-l> <C-w>l
+
+" Move lines
+nnoremap <A-j> :m .+1<CR>==
+nnoremap <A-k> :m .-2<CR>==
+inoremap <A-j> <Esc>:m .+1<CR>==gi
+inoremap <A-k> <Esc>:m .-2<CR>==gi
+vnoremap <A-j> :m '>+1<CR>gv=gv
+vnoremap <A-k> :m '<-2<CR>gv=gv
