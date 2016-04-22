@@ -27,6 +27,7 @@ augroup END
 
 " INTERFACE
 
+set background=dark
 set cmdheight=2
 set cursorline
 set laststatus=2
@@ -61,54 +62,37 @@ autocmd FileType php setlocal shiftwidth=4 tabstop=4
 
 
 " PLUGINS
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter' " Git diff in the gutter
+Plug 'altercation/vim-colors-solarized'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'scrooloose/syntastic'
+Plug 'sheerun/vim-polyglot'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-vinegar' " netrw enhancement
+call plug#end()
 
-Plugin 'gmarik/Vundle.vim'
-
-" rainbow parentheses
-Plugin 'kien/rainbow_parentheses.vim'
+" rainbow_parentheses
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
 au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
-" solarized theme
-Plugin 'altercation/vim-colors-solarized'
-set background=dark
+" vim-colors-solarized
 let g:solarized_termcolors=256
 
-" syntastic linting
-Plugin 'scrooloose/syntastic'
+" syntastic
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["typescript"] }
+let g:syntastic_mode_map = { "mode": "active" }
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-" tern autocompletion
-Plugin 'marijnh/tern_for_vim'
-let g:tern_map_keys=1
-let g:tern#is_show_argument_hints_enabled=1
-
-" Improved syntax highlighting for JavaScript
-Plugin 'pangloss/vim-javascript'
-" Syntax highlighting for JSX
-Plugin 'mxw/vim-jsx'
-
-" Silver Searcher
-Plugin 'rking/ag.vim'
-
-Plugin 'ctrlpvim/ctrlp.vim'
-let g:ctrlp_working_path_mode = 'ra'
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
-
-call vundle#end()
 filetype plugin on
 
 
