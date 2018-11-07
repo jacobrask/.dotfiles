@@ -4,6 +4,7 @@
 
 [core]
     excludesfile = ~/.dotfiles/gitignore
+    precomposeunicode = true
 
 [apply]
     whitespace = fix
@@ -15,10 +16,17 @@
     autosetuprebase = always
 
 [merge]
-    tool = vimdiff
+    tool = vscode
 
 [mergetool]
     keepBackup = false
+    prompt = true
+
+[mergetool "vscode"]
+    cmd = code --wait $MERGED
+
+[mergetool "mvimdiff"]
+    cmd = mvim -f -d $LOCAL $REMOTE $MERGED
 
 [advice]
     statusHints = false
@@ -28,3 +36,12 @@
 
 [alias]
     branchdate = !"for k in `git branch | sed s/^..//`; do echo `git log -1 --pretty=format:\" $k %Cgreen%ci%Creset\" $k --`;done | sort -k 2"
+
+[status]
+    showUntrackedFiles = all
+
+[log]
+	  decorate = full
+
+[rebase]
+	  autostash = true
