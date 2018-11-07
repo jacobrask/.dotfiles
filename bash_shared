@@ -165,3 +165,5 @@ shopt -s histappend
 export PATH=$PATH:~/bin
 
 source $HOME/.dotfiles/bash_prompt
+source $(brew --prefix)/etc/bash_completion.d/git-completion.bash
+source $(brew --prefix)/etc/bash_completion.d/git-prompt.sh
